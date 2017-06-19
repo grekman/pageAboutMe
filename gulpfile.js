@@ -4,6 +4,7 @@ var webpack = require('webpack-stream');
 var webpackConfig = require('./webpack.config.js');
 var nodemon = require('gulp-nodemon');
 var path = require('path');
+var deploy = require('gulp-gh-pages');
 
 
 /**
@@ -25,6 +26,15 @@ gulp.task('build', ['clean:build'], function() {
 
 gulp.task('watch:build', function() {
   return gulp.watch('./app/**/*', ['build']);
+});
+
+
+/**
+ * Push build to gh-pages
+ */
+gulp.task('deploy', function () {
+  return gulp.src("./pageAboutMe/**/*")
+    .pipe(deploy())
 });
 
 

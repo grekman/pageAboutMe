@@ -8,6 +8,7 @@ import Home from './components/home';
 // import MvcList from './components/mvc-list';
 import ArticlesList from './components/articles-list';
 import PhotoList from './components/photoes-list';
+import Contacts from './components/contacts';
 // import MovieList from './components/movie-list';
 // import BookList from './components/book-list';
 
@@ -32,11 +33,9 @@ export default (
                 <IndexRoute component={PhotoList} />
               </Route>
             </Route>
-            {/* <Route path="bookstore">
-              <Route component={SearchLayout} >
-                <IndexRoute component={BookList} />
-              </Route>
-            </Route> */}
+            <Route path="contacts">
+                <IndexRoute component={Contacts} />
+            </Route>
 
         </Route>
     </Router>

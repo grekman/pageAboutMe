@@ -11,7 +11,7 @@ export default class MainLayout extends Component {
           <NavItem ><Link to="/articles">Articles</Link></NavItem>
           <NavItem ><Link to="/photoes">My Insta</Link></NavItem>
           <NavItem ><Link to="/cv">CV</Link></NavItem>
-          <NavItem ><Link to="/contact">Contact</Link></NavItem>
+          <NavItem ><Link to="/contacts">Contact</Link></NavItem>
         </Navbar>
         <main>
           {this.props.children}

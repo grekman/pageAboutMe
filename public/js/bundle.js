@@ -19763,7 +19763,7 @@
 	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
 	var _react = __webpack_require__(1);
@@ -19792,43 +19792,52 @@
 	
 	var _photoesList2 = _interopRequireDefault(_photoesList);
 	
+	var _contacts = __webpack_require__(489);
+	
+	var _contacts2 = _interopRequireDefault(_contacts);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	// import MovieList from './components/movie-list';
 	// import BookList from './components/book-list';
 	
 	
-	// import MvcList from './components/mvc-list';
-	exports.default = _react2.default.createElement(
-	  _reactRouter.Router,
-	  { history: _reactRouter.browserHistory },
-	  _react2.default.createElement(
-	    _reactRouter.Route,
-	    { component: _mainLayout2.default },
-	    _react2.default.createElement(_reactRouter.Route, { path: '/', component: _home2.default }),
-	    _react2.default.createElement(
-	      _reactRouter.Route,
-	      { path: 'articles' },
-	      _react2.default.createElement(
-	        _reactRouter.Route,
-	        { component: _searchLayout2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _articlesList2.default })
-	      )
-	    ),
-	    _react2.default.createElement(
-	      _reactRouter.Route,
-	      { path: 'photoes' },
-	      _react2.default.createElement(
-	        _reactRouter.Route,
-	        { component: _searchLayout2.default },
-	        _react2.default.createElement(_reactRouter.IndexRoute, { component: _photoesList2.default })
-	      )
-	    )
-	  )
-	);
 	//Pages
 	
 	//Layout
+	exports.default = _react2.default.createElement(
+	    _reactRouter.Router,
+	    { history: _reactRouter.browserHistory },
+	    _react2.default.createElement(
+	        _reactRouter.Route,
+	        { component: _mainLayout2.default },
+	        _react2.default.createElement(_reactRouter.Route, { path: '/', component: _home2.default }),
+	        _react2.default.createElement(
+	            _reactRouter.Route,
+	            { path: 'articles' },
+	            _react2.default.createElement(
+	                _reactRouter.Route,
+	                { component: _searchLayout2.default },
+	                _react2.default.createElement(_reactRouter.IndexRoute, { component: _articlesList2.default })
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _reactRouter.Route,
+	            { path: 'photoes' },
+	            _react2.default.createElement(
+	                _reactRouter.Route,
+	                { component: _searchLayout2.default },
+	                _react2.default.createElement(_reactRouter.IndexRoute, { component: _photoesList2.default })
+	            )
+	        ),
+	        _react2.default.createElement(
+	            _reactRouter.Route,
+	            { path: 'contacts' },
+	            _react2.default.createElement(_reactRouter.IndexRoute, { component: _contacts2.default })
+	        )
+	    )
+	);
+	// import MvcList from './components/mvc-list';
 
 /***/ }),
 /* 160 */
@@ -24988,7 +24997,7 @@
 	            null,
 	            _react2.default.createElement(
 	              _reactRouter.Link,
-	              { to: '/contact' },
+	              { to: '/contacts' },
 	              'Contact'
 	            )
 	          )
@@ -54474,7 +54483,26 @@
 	          return _react2.default.createElement(
 	            _reactMaterialize.Col,
 	            { key: post.id, className: 'photo-wraper', s: 12, l: 3, m: 4 },
-	            _react2.default.createElement('img', { src: post.urls.thumb, className: 'one-photo' })
+	            _react2.default.createElement(
+	              _reactMaterialize.Card,
+	              {
+	                header: _react2.default.createElement(_reactMaterialize.CardTitle, { reveal: true, image: post.urls.small, className: 'one-photo', waves: 'light' }),
+	                title: 'Card Title',
+	                reveal: _react2.default.createElement(
+	                  'p',
+	                  null,
+	                  'Here is some more information about this product that is only revealed once clicked on.'
+	                ) },
+	              _react2.default.createElement(
+	                'p',
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { href: '#' },
+	                  'This is a link'
+	                )
+	              )
+	            )
 	          );
 	        })
 	      );
@@ -54503,6 +54531,119 @@
 	}(_react.Component);
 	
 	exports.default = PhotoList;
+
+/***/ }),
+/* 489 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(218);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var Contacts = function (_Component) {
+	  _inherits(Contacts, _Component);
+	
+	  function Contacts() {
+	    _classCallCheck(this, Contacts);
+	
+	    return _possibleConstructorReturn(this, (Contacts.__proto__ || Object.getPrototypeOf(Contacts)).apply(this, arguments));
+	  }
+	
+	  _createClass(Contacts, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'div',
+	        { className: 'contact' },
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { l: 12, s: 12, className: 'center-align' },
+	            _react2.default.createElement(
+	              'p',
+	              null,
+	              ' Contact me thought the form, or any of the following social media'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { l: 4, s: 12 },
+	            _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'First Name' }),
+	            _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Last Name' }),
+	            _react2.default.createElement(_reactMaterialize.Input, { s: 12, label: 'Your Message' }),
+	            _react2.default.createElement(_reactMaterialize.Input, { s: 12, type: 'email', label: 'Email' })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { l: 4, s: 12 },
+	            _react2.default.createElement(
+	              _reactMaterialize.Row,
+	              null,
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { className: 'waves-effect waves-light btn-floating btn-large social github' },
+	                  _react2.default.createElement(_reactMaterialize.Icon, { className: 'fa fa-github  grey darken-3' }),
+	                  ' Sign in with github'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { className: 'waves-effect waves-light btn-floating btn-large social facebook' },
+	                  _react2.default.createElement(_reactMaterialize.Icon, { className: 'fa fa-facebook indigo darken-2' }),
+	                  ' Sign in with Facebook'
+	                )
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                null,
+	                _react2.default.createElement(
+	                  'a',
+	                  { className: 'waves-effect waves-light btn-floating btn-large social linkedin' },
+	                  _react2.default.createElement(_reactMaterialize.Icon, { className: 'fa fa-linkedin light-blue darken-2' }),
+	                  ' Sign in with linkedin'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Contacts;
+	}(_react.Component);
+	
+	exports.default = Contacts;
 
 /***/ })
 /******/ ]);

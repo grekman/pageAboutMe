@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import {Row,Col} from 'react-materialize';
+import {Row,Col,Card,CardTitle} from 'react-materialize';
 
 
 export default class PhotoList extends Component {
@@ -53,7 +53,11 @@ console.log('yee: ',posts);
       {posts.map(post =>
       <Col key= {post.id} className="photo-wraper" s={12} l={3} m={4} >
         {/* <div className="photo"> */}
-          <img src ={post.urls.thumb} className="one-photo"/>
+          <Card
+            header={<CardTitle reveal image={post.urls.small} className="one-photo"  waves='light'/>}
+            title="Card Title"
+		        reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
+		      <p><a href="#">This is a link</a></p>
         {/* </div> */}
         {/* <div className="description">
           <p><b>LANGUAGE: </b>{`     ${post.original_language}`}</p>
@@ -61,6 +65,7 @@ console.log('yee: ',posts);
           <p><b>DESCRIPTION: </b> {` ${post.overview}`}</p>
           <p><b>RATING: </b> {`      ${post.vote_average}`}</p>
         </div> */}
+        </Card>
       </Col>
       )}
     </Row>
